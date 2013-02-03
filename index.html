@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ru">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>VIM VIM VIM</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Vim для редактирования кода
+            ![](http://uaix.piccy.info/i7/2daa10f0851d17ac4bfa367c810b628a/4-55-1378/50382108/rsz_vim_logo.png)
+          </script>
+        </section>        
+
+
+
+        <section data-markdown>
+          <script type="text/template">
+            ## История
+
+            &nbsp;
+
+            **Vi**
+
+            Первый релиз в 1976 году, автор &mdash; Билл Джой
+
+            &nbsp;
+
+            **Vim** (Vi Improved)
+
+            Первый релиз в 1991 году, автор &mdash; Брам Мооленаар
+          </script>
+        </section>        
+
+
+        <section data-markdown>
+            <script type="text/template">
+              ### Что было добавлено в **Vim**
+              - Проверка правописания
+              - Скрипты (vimscript, Perl, Python, Ruby, Tcl, scheme и другие)
+              - Редактирование файлов в архивах (gzip, bzip2, zip, tar)
+              - Окна и вкладки
+              - Поддержка Unicode
+              - Встроенная система помощи
+              - Редактирование по SSH, FTP, HTTP
+              - и другое
+            </script>
+        </section>
+
+
+        <section data-markdown>
+            <script type="text/template">
+              ## Tl;dr
+
+              &nbsp;
+
+              &nbsp;
+
+
+              :q&lt;Enter&gt;
+            </script>
+        </section>
+
+
+        <section data-markdown>
+            <script type="text/template">
+              ### Чем Vim отличается от обычного редактора
+
+              - Работает в нескольких режимах. Одна клавиша выполняет разные функции в разных режимах.
+
+              - Позволяет переназначать клавиши как только угодно.
+
+              - Руки не покидают основного блока клавиш.
+
+              - Настройка и скрипты.
+
+              - Связка с unix tools.
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ## Что делать?
+
+              - Быстро передвигаться по тексту
+              - Не повторяться
+              - Автоматизировать часто используемые функции
+                    - заметил повторение
+                    - автоматизировал
+                    - взял за привычку
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ## Режимы
+              Переход из любого режима в Normal &mdash; Esc.
+
+              Функцию клавиши (или комбинации) можно назначать отдельно для любого режима.
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ### Normal
+              Передвижение по тексту, манипуляции: удаление, копирование, вставка и другое.
+              Б*о*льшую часть времени вы находитесь в этом режиме.
+
+              ### Insert
+              Непосредственное написание текста.
+              Из этого режима вы выходите как только написали необходимое количество текста.
+
+              ##### Replace
+              От Insert отличается тем, что заменяет символы, а не вставляет. Аналогично нажатой клавише insert в обычном редакторе.
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ### Visual
+              Выделение текста. В этом режиме вы можете использовать возможности перемещения свойственные режиму Normal.
+              gv &mdash; последнее выделение.
+              % &mdash; перемещение между границами выделения.
+              @* &mdash; регистр, содержащий последнюю выделенную строку.
+
+              ##### Visual Line
+              Выделение строк.
+
+              ##### Visual Block
+              Выделение прямоугольного блока текста.
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ### Command
+              Режим для выполнения команд: открытие файла, выход, изменение настроек, вызов команд плагинов и т. д.
+            </script>
+        </section>
+
+
+        <section data-markdown>
+            <script type="text/template">
+![](http://lmarburger.github.com/vim_vs_emacs/file/one/vim-cheat-sheet.png "Cheat Sheet")
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ## Переход в режим вставки
+              - i &mdash; перед курсором (insert)
+              - I &mdash; в начале строки
+              - a &mdash; за курсором (append)
+              - A &mdash; за строкой
+              - o &mdash; вставить строку ниже
+              - O &mdash; вставить строку выше
+              - s &mdash; с удалением одного символа (substitute)
+              - S &mdash; замена строки
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ## Text Objects и комбинации клавиш
+
+              #### 1. Глагол
+              **d** (delete),
+              **c** (change),
+              **y** (yank),
+
+              #### 2. Наречие
+
+              **i** (inner),
+              **a** (around / all)
+
+              #### 3. Существительное
+
+              **t** (tag), 
+              **w** (word), 
+              **p** (paragraph), 
+              **m** (method),
+              **' " ( [ {** 
+
+              #### 4. Действие целиком
+              - **ciw** &mdash; ("change inner word")
+              - **ya"** &mdash; yank double-quoted string (include quotes)
+              - **di(** &mdash; delete text between matching parentheses
+            </script>
+        </section>
+
+
+        <section data-markdown>
+            <script type="text/template">
+![](http://uaix.piccy.info/i7/8a828b67ae56b0cd97918f9953d79dc0/4-55-1373/62722653/rsz_vim_shortcuts_dark_2560x1600.png)
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ## Плагины
+
+              - **BufExplorer** &mdash; переключение между буферами
+              - **CtrlP** &mdash; поиск и открытие файла по шаблону пути
+              - **NerdTree** &mdash; дерево файлов
+              - **Snipmate** &mdash; сниппеты кода (Textmate style)
+              - **Tagbar** &mdash; список символов текущем буфере
+              - **TComment** &mdash; комментирование кода
+              - **Vim-Surround** &mdash; обрамление текста кавычками, скобками, тегами
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ## Конфигурация
+
+              Множество файлов vimrc можно найти на Github. Храня свои настройки в репозитории, вы можете легким движением &laquo;приручить&raquo; Vim на любом компьютере.
+
+              **Github** &rarr; Search "**vimrc**" &rarr; **8,420** repository results
+
+              А также множество цветовых схем.
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ## Реализации
+
+              - Vim
+              - Gvim
+              - Macvim
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ## Vim mode в других программах
+
+              - NetBeans ([jvi](http://jvi.sourceforge.net/))
+              - Eclipse ([vrapper](http://vrapper.sourceforge.net/home/))
+              - VisualStudio ([ViEmu](http://www.viemu.com/))
+              - Crhomium ([vimium](http://vimium.github.com/))
+              - Firefox ([vimperator](http://www.vimperator.org/))
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ### Кстати, на **Github** тоже есть горячие клавиши
+
+              - k &mdash; следующий коммит
+              - j &mdash; предыдущий коммит
+              - o &mdash; открыть детали коммита
+
+              ### И в **Gmail**
+
+              - k &mdash; к следующей беседе
+              - j &mdash; к предыдущей беседе
+              - n &mdash; к следующему сообщению
+              - p &mdash; к предыдущему сообщению
+              - o &mdash; открыть беседу
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+              ## Материалы
+
+              - Неофициальная Vim Wikia [http://vim.wikia.com/wiki/Vim_Tips_Wiki]( http://vim.wikia.com/wiki/Vim_Tips_Wiki )
+              - Что нужно уметь делать в Vim [https://learn.thoughtbot.com/vim]( https://learn.thoughtbot.com/vim )
+              - Собрание цветовых схем [http://code.google.com/p/vimcolorschemetest/]( http://code.google.com/p/vimcolorschemetest/ )
+              - Vim kata &mdash;  вдохновляющее видео [http://vimeo.com/8569257]( http://vimeo.com/8569257 )
+              - Vim cheat sheet [http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
+              - Vim movements cheat sheet [https://github.com/EspadaV8/vim_shortcut_wallpaper/](https://github.com/EspadaV8/vim_shortcut_wallpaper/)
+              - Peepcode Screencasts. Smash into Vim.
+            </script>
+        </section>
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
