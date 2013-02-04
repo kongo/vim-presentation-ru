@@ -1,6 +1,7 @@
 # Vim для редактирования кода
 
 User group @ SoftServe, Севастополь
+
 Смотреть презентацию: [http://vim-vim-vim.herokuapp.com](http://vim-vim-vim.herokuapp.com).
 
 01.02.2013
